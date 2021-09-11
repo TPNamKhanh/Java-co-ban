@@ -1,0 +1,34 @@
+// Họ và Tên : Trần Phạm Nam Khánh
+// MSV : A35200
+
+// Bài tập 14. Nhập 2 xâu ký tự s1 và s2. Viết hàm kiểm tra xem xâu ký tự s1 có chứa xâu ký tự s2 hay không
+
+import java.util.Scanner;
+
+class Main {
+	public static boolean ck(int s1, int s2){
+		return s1 >= s2;
+	}
+
+	public static void check_str(String s1, String s2){
+		int j = 0;
+		for(int i = 0 ; i < s1.length(); i++){
+			if(s1.charAt(i) == s2.charAt(j))
+				j++;
+			else	
+				j = 0;
+			if(!ck(s1.length() - i, s2.length() - j)){
+				System.out.println("NO");
+					return;
+			}
+		}
+		System.out.println("YES");
+	}
+
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    String s1 = scanner.nextLine();
+		String s2 = scanner.nextLine();
+		check_str(s1, s2);
+  }
+}
